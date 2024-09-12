@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+/*import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { AuthProvider } from './contexts/AuthContext';
+import theme from './styles/theme';
+import 'react-quill/dist/quill.snow.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <AuthProvider>
+        <Router>
+          
+          <AppRoutes />
+          
+        </Router>
+      </AuthProvider>
+    </ChakraProvider>
+  );
+}
+
+export default App;*/
+
+///
+import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import AppRoutes from './routes/AppRoutes';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <ChakraProvider>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <AppRoutes />
+          <Footer />
+        </Router>
+      </AuthProvider>
+    </ChakraProvider>
   );
 }
 
